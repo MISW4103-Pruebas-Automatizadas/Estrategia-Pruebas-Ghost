@@ -1,0 +1,28 @@
+{
+  "name": "e2e-kraken",
+  "version": "1.0.0",
+  "description": "Pruebas e2e automatizadas apoyadas con Kraken.",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "kraken-node doctor; test -f reports/output.txt && rm reports/output.txt || true",
+    "test": "kraken-node run || true",
+    "posttest": "test -f reports/output.txt && cat reports/output.txt | node helpers/superindex.mjs > reports/index.html",
+    "format": "prettier --write features custom helpers"
+  },
+  "author": "202415 Equipo 12",
+  "contributors": [
+    "@TheSoftwareDesignLab",
+    "juanmanuelgg",
+    "dafur1900",
+    "Dani-sie",
+    "hMonroyUniandes"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "appium": "^2.12.1",
+    "kraken-node": "^1.0.24"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
+}
