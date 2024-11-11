@@ -10,7 +10,7 @@ it('Change site privacy with valid password', function() {
   cy.get('[data-testid="locksite"]').find('button').contains('span', 'Edit').click();  
   cy.wait(1000);    
   cy.get('[data-testid="locksite"]').find('button[role="switch"]').click();
-  cy.get('[data-testid="locksite"]').find('input[placeholder="Enter password"]').type('q1w2e3r4t5y6u7i8o9');
+  cy.get('[data-testid="locksite"]').find('input[placeholder="Enter password"]').type('q1w2e3r4t5y6u7i8o9#');
   cy.get('[data-testid="locksite"]').find('span').contains('Save').click();
   
   
