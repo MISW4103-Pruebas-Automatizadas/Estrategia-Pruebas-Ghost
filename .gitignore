@@ -1,0 +1,5 @@
+node_modules
+*.mp4
+/CYPRESS/cypress/e2e/ignore
+/CYPRESS/cypress/screenshots
+/CYPRESS/cypress/videos
