@@ -25,11 +25,11 @@ Este repositorio contiene tanto la instalacion de Cypress como la de Ghost
    ```shell
    grupo12@uniandes:~/home$ sudo lsof -i :2368
    ```
-   la cuál lista los procesos que podrían estar ocupando el puerto, en caso tal que no sea posible determinar por consola el proceso que ocupa el puerto, emplear el comando contra el PID sospechoso así:
+  la cuál lista los procesos que podrían estar ocupando el puerto, en caso tal que no sea posible determinar por consola el proceso que ocupa el puerto, emplear el comando contra el PID sospechoso así:
    ```shell
    grupo12@uniandes:~/home$ sudo kill -9 <PID> 
    ```
-   Donde <PID> is el id del proceso que está ocupando el puerto 2368
+2. <PID> indica el id del proceso que está ocupando el puerto 2368
 3. Dirigiéndose a un directorio de proyecto inicialice con la instrucción (para el ejemplo hemos creado el directorio - pruebas_e2e_ghost -)
    ```shell
    grupo12@uniandes:~/home$ mkdir pruebas_e2e_ghost
@@ -48,7 +48,9 @@ Este repositorio contiene tanto la instalacion de Cypress como la de Ghost
    ```shell
    grupo12@uniandes:~/home/pruebas_e2e_ghost/GHOST$ ghost start
    ```
+   
 **Para la ejecución de pruebas con CYPRESS!!!** 
+
 7. Instalamos la aplicación cypress en la carpeta del proyecto ghost con el comando
    ```shell
    grupo12@uniandes:~/home/pruebas_e2e_ghost/GHOST$ npm install -g cypress
