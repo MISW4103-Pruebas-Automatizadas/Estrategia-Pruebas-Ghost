@@ -9,7 +9,6 @@
     "regenerate:ghost": "docker compose down db ghost && docker compose up --build -d db ghost",
     "pretest": "kraken-node doctor; test -f reports/output.txt && rm reports/output.txt || true",
     "test": "kraken-node run",
-    "format": "prettier --write features custom helpers",
     "serve": "serve -s reports"
   },
   "author": "202415 Equipo 12",
@@ -25,8 +24,5 @@
     "appium": "^2.12.1",
     "kraken-node": "^1.0.24",
     "serve": "^14.2.4"
-  },
-  "devDependencies": {
-    "prettier": "^3.2.5"
   }
 }
