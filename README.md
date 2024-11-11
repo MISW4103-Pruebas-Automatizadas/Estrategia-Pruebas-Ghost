@@ -27,8 +27,12 @@ Este repositorio contiene tanto la instalacion de Cypress como la de Ghost
 
 3. Instale Ghost con la instrucción "npm install ghost-cli@latest"
 
-4. Elimine el archivo que se encuentra en la ruta "GHOST/content/data/ghost-local.db" (Hacer esto cada vez que se desee ejecutar el set de pruebas de Cypress sobre Ghost)
+4. Elimine el archivo que se encuentra en la ruta "GHOST/content/data/ghost-local.db"
 
 5. Inicie Ghost ejecutando la instruccion "ghost start" en la carpeta "/GHOST" de este repositorio
 
 6.Ejecutar las pruebas mediante el comando "cypress run --headless" sobre la carpeta "/CYPRESS"
+
+7. Cada vez que se desee recrear el conjunto de escenarios de pruebas, debe detenerse la ejecución de GHOST con el comando:
+   "ghost stop"
+   Posteriormente repetir los pasos 4 a 6
