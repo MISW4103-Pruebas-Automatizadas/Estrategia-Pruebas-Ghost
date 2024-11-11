@@ -4,7 +4,7 @@ const { Given, When, Then } = require("@cucumber/cucumber");
  * Crear pasos para el escenario Ejemplo
  */
 
-Given('I navigate to this web {string}', async function (string) {
+Given("I navigate to this web {string}", async function (string) {
   return await this.driver.url(string);
 });
 When("I click view with selector {selector}", async function (selector) {
@@ -25,4 +25,3 @@ Then('I should see {string} in view with selector {string}', async function (str
 Given('I navigate to this page {string}', async function (string) {
   return await this.driver.url(`${this.ghostHost}/${string}`);
 });
-
