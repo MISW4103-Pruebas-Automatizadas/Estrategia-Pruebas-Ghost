@@ -13,8 +13,12 @@
 
 ```shell
 cd KRAKEN
-docker compose up --build
+docker compose up --build -d ghost db
+# Esperar a que se levante el contenedor de ghost
+docker compose up --build -d e2e-kraken
 ```
+
+[Evidencia ejecucion](https://youtu.be/XY76O2OCEks)
 
 ### iii. Paso a paso para la instalación y ejecución de las pruebas en la otra herramienta de su elección (**Cypress**)
 
