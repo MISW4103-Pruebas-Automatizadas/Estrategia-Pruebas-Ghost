@@ -31,7 +31,7 @@ Este repositorio contiene tanto la instalacion de Cypress como la de Ghost
 
 5. Inicie Ghost ejecutando la instruccion "ghost start" en la carpeta "/GHOST" de este repositorio
 
-6.Ejecutar las pruebas mediante el comando "cypress run --headless" sobre la carpeta "/CYPRESS"
+6. Ejecutar las pruebas mediante el comando "cypress run --headless" sobre la carpeta "/CYPRESS"
 
 7. Cada vez que se desee recrear el conjunto de escenarios de pruebas, debe detenerse la ejecución de GHOST con el comando:
    "ghost stop"
