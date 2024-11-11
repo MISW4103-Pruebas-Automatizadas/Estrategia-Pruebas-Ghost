@@ -14,8 +14,9 @@ When("I click view with selector {selector}", async function (selector) {
 Then("I enter text {text}", async function (text) {
   return await this.driver.keys(text);
 });
-Then("I report a blog", function () {
-  this.hasBlog = true;
+Then('I should see {string} in view with selector {string}', async function (string, string2) {
+  var element = await this.driver.$(string2);
+  return await element.getText(string); 
 });
 
 /**
@@ -24,3 +25,4 @@ Then("I report a blog", function () {
 Given('I navigate to this page {string}', async function (string) {
   return await this.driver.url(`${this.ghostHost}/${string}`);
 });
+
