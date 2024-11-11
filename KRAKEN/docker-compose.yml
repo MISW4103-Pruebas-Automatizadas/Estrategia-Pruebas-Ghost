@@ -1,0 +1,19 @@
+name: 202415-e2e-kraken
+
+services:
+  e2e-kraken:
+    container_name: 202415-e2e-kraken
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./reports/kraken:/home/node/tests/reports
+    deploy:
+      resources:
+        # 2 vCPU, 1GB Ram para usar Free Tier de Amazon (t3.micro -> stockholm -> eu-north-1)
+        limits: # t3.micro ... ya no, se queda pequeña
+          cpus: "4"
+          memory: 8G
+        reservations: # t2.micro
+          cpus: "1"
+          memory: 1G
