@@ -29,8 +29,7 @@ Este repositorio contiene tanto la instalacion de Cypress como la de Ghost
    ```shell
    grupo12@uniandes:~/home$ sudo kill -9 <PID> 
    ```
-    Donde <PID> is el id del proceso que está ocupando el puerto 2368
-   
+   Donde <PID> is el id del proceso que está ocupando el puerto 2368
 3. Dirigiéndose a un directorio de proyecto inicialice con la instrucción (para el ejemplo hemos creado el directorio - pruebas_e2e_ghost -)
    ```shell
    grupo12@uniandes:~/home$ mkdir pruebas_e2e_ghost
