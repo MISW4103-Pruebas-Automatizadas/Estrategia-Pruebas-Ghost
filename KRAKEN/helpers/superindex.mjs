@@ -17,7 +17,7 @@ process.stdin.on("data", (input) => {
   const lines = input.split("\n");
   lines.forEach((line) => {
     if (line.trim() !== "")
-      str_buffer += `      <li><a href="${line}/index.html">testScenarioId: ${line}</a></li>\n`;
+      str_buffer += `      <li><a href="./${line}/index.html">testScenarioId: ${line}</a></li>\n`;
   });
 });
 

@@ -1,8 +1,8 @@
-name: 202415-e2e-kraken
+name: 202415w5-e2e-kraken
 
 services:
   e2e-kraken:
-    container_name: 202415-e2e-kraken
+    container_name: e2e-kraken
     build:
       context: ./
       dockerfile: Dockerfile
@@ -17,3 +17,44 @@ services:
         reservations: # t2.micro
           cpus: "1"
           memory: 1G
+    depends_on:
+      - db
+      - ghost
+
+  ghost:
+    container_name: ghost
+    image: ghost:5-alpine
+    restart: always
+    ports:
+      - 2368:2368
+    environment:
+      # see https://ghost.org/docs/config/#configuration-options
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: root
+      database__connection__password: 8e4sB1Z427gikZL82EqI
+      database__connection__database: ghost
+      # this url value is just an example, and is likely wrong for your environment!
+      url: http://localhost:2368
+      # contrary to the default mentioned in the linked documentation, this image defaults to NODE_ENV=production (so development mode needs to be explicitly specified if desired)
+      NODE_ENV: development
+    depends_on:
+      - db
+    # volumes:
+    #   - ./config.development.json:/var/lib/ghost/config.production.json
+    #   - ./config.production.json:/var/lib/ghost/config.production.json
+    #   - ghost:/var/lib/ghost/content
+
+  db:
+    container_name: db
+    image: mysql:8.0
+    restart: always
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 8e4sB1Z427gikZL82EqI
+    # volumes:
+    #   - db:/var/lib/mysql
+# volumes:
+#   ghost:
+#   db:

@@ -9,14 +9,25 @@
 | Daniel Sierra Rincon            | dani-sie@uniandes.edu.co        |
 | Helberth Leonardo Monroy Bustos | h.monroy@uniandes.edu.co        |
 
-## ii. Paso a paso para la instalación y ejecución de las pruebas en Kraken
+## ii. Paso a paso para la instalación y ejecución de la aplicación bajo pruebas **Ghost**
 
 ```shell
-cd KRAKEN
+cd GHOST
 docker compose up --build
 ```
 
-### iii. Paso a paso para la instalación y ejecución de las pruebas en la otra herramienta de su elección (**Cypress**)
+
+## iii. Paso a paso para la instalación y ejecución de las pruebas en Kraken
+
+```shell
+cd KRAKEN
+# Nos toco usar docker en Kraken para poder garantizar la existencia de una corrección en el codigo de kraken-node
+docker compose up --build -d ghost db
+# Esperar a que ghost este listo
+docker compose up --build e2e-kraken
+`
+
+### iv. Paso a paso para la instalación y ejecución de las pruebas en la otra herramienta de su elección (**Cypress**)
 
 Esta guia le ayudará a ejecutar el set de pruebas en Cypress sobre Ghost.
 Este repositorio contiene tanto la instalacion de Cypress como la de Ghost
@@ -47,7 +58,7 @@ Este repositorio contiene tanto la instalacion de Cypress como la de Ghost
    ```
 6. Inicie ghost ejecutando la instruccion "ghost start" en la carpeta "/GHOST" de este repositorio
 
-7.Ejecutar las pruebas mediante el comando "cypress run --headless" sobre la carpeta "/CYPRESS"
+7. Ejecutar las pruebas mediante el comando "cypress run --headless" sobre la carpeta "/CYPRESS"
 
 8. Cada vez que se desee recrear el conjunto de escenarios de pruebas, debe detenerse la ejecución de GHOST con el comando:
    "ghost stop"

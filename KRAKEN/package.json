@@ -7,7 +7,8 @@
     "pretest": "kraken-node doctor; test -f reports/output.txt && rm reports/output.txt || true",
     "test": "kraken-node run || true",
     "posttest": "test -f reports/output.txt && cat reports/output.txt | node helpers/superindex.mjs > reports/index.html",
-    "format": "prettier --write features custom helpers"
+    "format": "prettier --write features custom helpers",
+    "serve": "serve -s reports"
   },
   "author": "202415 Equipo 12",
   "contributors": [
@@ -20,7 +21,8 @@
   "license": "ISC",
   "dependencies": {
     "appium": "^2.12.1",
-    "kraken-node": "^1.0.24"
+    "kraken-node": "^1.0.24",
+    "serve": "^14.2.4"
   },
   "devDependencies": {
     "prettier": "^3.2.5"
