@@ -59,12 +59,13 @@ Este repositorio contiene tanto la instalacion de Cypress como la de Ghost
    grupo12@uniandes:~/home/pruebas_e2e_ghost/GHOST$ cd CYPRESS
    grupo12@uniandes:~/home/pruebas_e2e_ghost/GHOST/CYPRESS$ cypress open
    ```
-9. Copiamos mediante git o directamente los escenarios creados en este repositorio a la carpeta  ~/<instalacion ghost>/CYPRESS/cypress/e2e. Ejecutandor las pruebas mediante el comando
+9. Copiamos mediante git o directamente los escenarios creados en este repositorio a la carpeta  ~/<instalacion ghost>/CYPRESS/cypress/e2e.
+10. Ejecutamos las pruebas mediante el comando
    ```shell
    grupo12@uniandes:~/home/pruebas_e2e_ghost/GHOST/CYPRESS$ cypress run --headless
    ``` 
-8. Cada vez que se desee recrear el conjunto de escenarios de pruebas, debe detenerse la ejecución de GHOST con el comando:
+11. Cada vez que se desee recrear el conjunto de escenarios de pruebas, debe detenerse la ejecución de GHOST con el comando:
    ```shell
    grupo12@uniandes:~/home/pruebas_e2e_ghost/GHOST$ ghost stop
    ``` 
-   Posteriormente repetir los pasos 4 a 6
+   Posteriormente repetir los pasos 5,6,10
