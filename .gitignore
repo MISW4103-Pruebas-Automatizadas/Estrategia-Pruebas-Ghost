@@ -3,3 +3,5 @@ node_modules
 /CYPRESS/cypress/e2e/ignore
 /CYPRESS/cypress/screenshots
 /CYPRESS/cypress/videos
+/GHOST/content/logs/*
+/GHOST/content/data/
