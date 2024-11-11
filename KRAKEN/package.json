@@ -9,6 +9,7 @@
     "regenerate:ghost": "docker compose down db ghost && docker compose up --build -d db ghost",
     "pretest": "kraken-node doctor; test -f reports/output.txt && rm reports/output.txt || true",
     "test": "kraken-node run",
+    "fresh": "npm run regenerate:ghost && date && sleep 120 && date && docker compose up --build e2e-kraken",
     "serve": "serve -s reports"
   },
   "author": "202415 Equipo 12",

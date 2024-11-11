@@ -1,4 +1,5 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
+const assert = require('assert')
 
 /**
  * Crear pasos para el escenario Ejemplo
@@ -24,4 +25,10 @@ Then('I should see {string} in view with selector {string}', async function (str
  */
 Given('I navigate to this page {string}', async function (string) {
   return await this.driver.url(`${this.ghostHost}/${string}`);
+});
+
+Then('I should see the url ending as {string}', async function (string) {
+  var url = await this.driver.getUrl();
+  console.log({url});
+  return assert.equal(url.endsWith(string), true);
 });
