@@ -24,7 +24,7 @@ ENV ANDROID_SDK_ROOT=$ANDROID_HOME \
     PATH=${PATH}:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/emulator
 
 # comes from https://developer.android.com/studio/#command-tools
-ENV ANDROID_SDK_TOOLS_VERSION 10406996
+ENV ANDROID_SDK_TOOLS_VERSION=10406996
 
 RUN wget -q https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_SDK_TOOLS_VERSION}_latest.zip -O android-sdk-tools.zip \
     && mkdir -p ${ANDROID_HOME}/cmdline-tools/ \
@@ -53,15 +53,11 @@ RUN if [ $(uname -m) == "x86_64" ]; then sdkmanager emulator ; fi
 # RUN yes | sdkmanager --licenses
 
 RUN mkdir -p /home/node/tests
-
 WORKDIR /home/node/tests
-COPY --chown=node:node package.json package-lock.json mobile.json ./
-COPY --chown=node:node features features
-COPY --chown=node:node helpers helpers
-
-RUN npm ci --omit=dev || npm install --omit=dev
-
 RUN mkdir -p reports
+COPY --chown=node:node package.json package-lock.json mobile.json ./
+RUN npm ci --omit=dev || npm install --omit=dev
+COPY --chown=node:node helpers helpers
 
 # Corrección de error en Kraken ====
 # TODO: Compartir en Issue tracker y quitar despues de la corrección por parte de Kraken.
@@ -74,5 +70,8 @@ RUN cp custom/FileHelper.js /home/node/tests/node_modules/kraken-node/lib/utils/
 # Chorme headless (También aplica en chromium)
 # https://github.com/GoogleChrome/chrome-launcher/commit/4771eafff2b5a93c8cad3c359d027253618b936b
 ENV HEADLESS=true
+
+# Esta capa debe ir de ultimas para que no se necesite recostruir todo el docker para probar un cambio
+COPY --chown=node:node features features
 
 ENTRYPOINT ["npm", "test"]
