@@ -1,4 +1,4 @@
-Feature: Singin
+Feature: Singin02
 
 @user1 @web
 Scenario: Con el usuario autorizado quiero entrar al panel administrativo del blog
@@ -18,5 +18,5 @@ Scenario: Con el usuario autorizado quiero entrar al panel administrativo del bl
   And I wait for 1 seconds
   And I click view with selector "#ember4"
   And I wait for 4 seconds
-  Then I should see "Please enter a site title" in view with selector ".main-error"
+  Then I should see "Please enter a site title" in view with selector ".response > body > div.gh-app > div > main > section > div > p"
   And I wait for 2 seconds
