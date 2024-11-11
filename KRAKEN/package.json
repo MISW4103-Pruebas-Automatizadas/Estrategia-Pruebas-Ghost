@@ -4,10 +4,11 @@
   "description": "Pruebas e2e automatizadas apoyadas con Kraken.",
   "main": "index.js",
   "scripts": {
+    "init:ghost": "docker compose up --build -d db ghost",
+    "init:kraken": "docker compose up --build -d e2e-kraken",
+    "regenerate:ghost": "docker compose down db ghost && docker compose up --build -d db ghost",
     "pretest": "kraken-node doctor; test -f reports/output.txt && rm reports/output.txt || true",
-    "test": "kraken-node run || true",
-    "posttest": "test -f reports/output.txt && cat reports/output.txt | node helpers/superindex.mjs > reports/index.html",
-    "format": "prettier --write features custom helpers",
+    "test": "kraken-node run",
     "serve": "serve -s reports"
   },
   "author": "202415 Equipo 12",
@@ -23,8 +24,5 @@
     "appium": "^2.12.1",
     "kraken-node": "^1.0.24",
     "serve": "^14.2.4"
-  },
-  "devDependencies": {
-    "prettier": "^3.2.5"
   }
 }
