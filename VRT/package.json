@@ -1,0 +1,15 @@
+{
+  "name": "vrt",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "vrt:resemble": "node resemble.mjs",
+    "vrt:pixelmatch": "node pixelmatch.mjs"
+  },
+  "author": "202415 Equipo 12",
+  "license": "ISC",
+  "dependencies": {
+    "pixelmatch": "^6.0.0",
+    "resemblejs": "^5.0.0"
+  }
+}
