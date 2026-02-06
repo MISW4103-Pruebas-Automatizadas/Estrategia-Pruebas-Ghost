@@ -209,7 +209,7 @@
     "luxon": "3.5.0",
     "moment": "2.24.0",
     "moment-timezone": "0.5.45",
-    "multer": "1.4.4",
+    "multer": "2.0.2",
     "mysql2": "3.11.4",
     "nconf": "0.12.1",
     "node-jose": "2.2.0",
