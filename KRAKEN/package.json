@@ -22,7 +22,7 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "appium": "^2.12.1",
+    "appium": "^3.2.0",
     "kraken-node": "^1.0.24",
     "serve": "^14.2.4"
   }
